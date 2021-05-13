@@ -4,10 +4,3 @@ This is my First line after 1st commit is done. #To be commited on 2nd commit
 
 This is my second line after 1st commit : # --> this is our 3rd commit to this file.
 
-# This line i have added from Git Hub Gui to test
-
-<<<<<<< HEAD
-This line i am adding from local repo.
-=======
-#This is 2nd line i am adding from Git hub Gui.and also made one change to local repo.but didnt commit changes here.
->>>>>>> a813cb45956295a3f31e0471fbeb35f671d8ce89
