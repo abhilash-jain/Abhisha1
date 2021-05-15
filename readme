@@ -11,3 +11,7 @@ This is first line from git bash to check merge conflicts
 
 1.This branch is created to make changes to readme file, merge to master branch and get itself deleted as not required later.
 2.so lets work on it.
+
+#Lines added to check Git stash working
+
+1. this line will be added to file but will not be committed to master branch for now.
