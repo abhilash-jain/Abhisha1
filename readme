@@ -7,3 +7,6 @@ This is my second line after 1st commit : # --> this is our 3rd commit to this f
 
 
 This line i am adding from local repo.
+
+#plans to check git stash here. 
+1. we changed branch from master to main to check how git stash will respond
