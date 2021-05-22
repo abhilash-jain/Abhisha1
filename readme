@@ -16,3 +16,5 @@ This is first line from git bash to check merge conflicts
 
 1. this line will be added to file but will not be committed to master branch for now.
 2.will check how git stash works
+
+3.lets add one line for jenkins to check if git hook catches this line and change on git
