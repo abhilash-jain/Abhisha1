@@ -1,0 +1,10 @@
+- name: Play to demonstrate vars prompt feature
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+     - name: username   #---> This is the variable in which value will be stored.
+       prompt: "Enter username:"
+       private: no
+  tasks:
+    - debug:
+        msg: "The name of the user is {{username}}"
