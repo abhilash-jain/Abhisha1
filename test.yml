@@ -1,5 +1,5 @@
 - name: Play to demonstrate vars prompt feature
-  hosts: localhost
+  hosts: Jenkins_Host
   gather_facts: no
   vars_prompt:
      - name: username   #---> This is the variable in which value will be stored.
