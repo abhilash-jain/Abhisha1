@@ -1,2 +1,0 @@
-[Jenkins_Host]
-localhost ansible_user=ec2-user
