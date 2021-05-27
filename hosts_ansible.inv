@@ -1,2 +1,2 @@
-[Jenkins_Host]
-localhost ansible_user=ec2-user
+[webserver]
+ip-172-31-44-192.ap-south-1.compute.internal
