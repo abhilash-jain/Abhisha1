@@ -1,0 +1,11 @@
+---
+- name: Playbook to copy files
+  hosts: webserver
+
+  tasks:
+
+    - name: Copy file with owner and permissions
+      copy:
+        src: /home/ec2-user/abhi_test
+        dest: /home/ec2-user/test/
+        remote_src: yes
