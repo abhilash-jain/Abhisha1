@@ -11,6 +11,4 @@
         dest: /home/ec2-user/test/
         remote_src: yes
         
-        - name: Basic usage
-          debug:
-           msg: "'{{ lookup('env', 'HOME') }}' is the HOME environment variable."
+     
