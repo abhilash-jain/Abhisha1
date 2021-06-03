@@ -1,6 +1,6 @@
 ---
 - name: Playbook to copy files
-  hosts: localhost
+  hosts: webserver
 
   tasks:
    - name: Basic usage
