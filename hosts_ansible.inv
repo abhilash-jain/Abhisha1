@@ -1,4 +1,4 @@
 [webserver]
 #localhost ansible_user=ec2-user
  13.233.183.64 ansible_user=ec2-user
-# 65.0.91.15 ansible_user=ec2-user
+ 65.0.91.15 ansible_user=ec2-user
