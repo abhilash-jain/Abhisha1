@@ -1,5 +1,5 @@
 ---
-- name: Playbook to start server
+- name: Playbook to stop server
   #hosts: localhost
   hosts: webserver
 
