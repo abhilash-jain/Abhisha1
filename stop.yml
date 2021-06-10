@@ -6,7 +6,8 @@
   tasks:
    - name: Stop the server tomcat from UI
      shell:
-             /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+             /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh ;#>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+              pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
      register: toms_version
 
    - debug:
