@@ -10,6 +10,5 @@
  
      register: toms_version
    - debug:
-       var: toms_version.stdout_lines
        var: toms_process.stdout_lines
 
