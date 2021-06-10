@@ -1,0 +1,9 @@
+---
+- name: Playbook to stop server
+  #hosts: localhost
+  hosts: webserver
+
+  tasks:
+   - name: Stop the server tomcat from UI
+     shell:
+             /home/ec2-user/apache-tomcat-9.0.39/bin/version.sh >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
