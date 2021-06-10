@@ -6,4 +6,9 @@
   tasks:
    - name: Stop the server tomcat from UI
      shell:
-             /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+             /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+     register: toms_version
+
+   - debug:
+       var: toms_version.stdout_lines
+
