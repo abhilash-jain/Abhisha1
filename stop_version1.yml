@@ -12,7 +12,7 @@
      register: toms_version
 
    - debug:
-       msg: "{{toms_version.stdout_lines}}"
+       msg: toms_version.stdout_lines
      tags: check_version  #uncommenting it to check if tags work without error
     
    - name: Stop the server tomcat from UI
@@ -22,5 +22,5 @@
  
      register: toms_process
    - debug:
-       msg: "{{toms_process.stdout_lines}}"
+       msg: toms_process.stdout_lines
      tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
