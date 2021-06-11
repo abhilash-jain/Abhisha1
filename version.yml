@@ -12,4 +12,5 @@
 
    - debug:
        var: toms_version.stdout_lines
+     tags: check_version  
          
