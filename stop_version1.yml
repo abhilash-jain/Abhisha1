@@ -13,9 +13,9 @@
 
    - debug:
        var: toms_version.stdout_lines
-     tags: check_version  #uncommenting it to check if tags work without error.
+     tags: check_version  #uncommenting it to check if tags work without error
     
-  - name: Stop the server tomcat from UI
+   - name: Stop the server tomcat from UI
      shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh ;#>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
