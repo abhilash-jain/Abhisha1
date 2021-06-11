@@ -12,8 +12,6 @@
      register: toms_version
 
 #   - debug:
-        with_items: toms_version.result
-        var: item.stdout_lines
  #      var: toms_version.output
      tags: check_version  #uncommenting it to check if tags work without error
     
