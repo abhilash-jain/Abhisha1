@@ -1,3 +1,4 @@
+# THis playbook we are trying to add version and stop steps in same file along with tags to call them
 ---
 - name: Playbook to check server version
   #hosts: localhost
