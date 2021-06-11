@@ -13,7 +13,7 @@
 
    - debug:
        var: toms_version.stdout_lines
-     tags: check_version  #uncommenting it to check if tags work without error
+     #tags: check_version  #uncommenting it to check if tags work without error
     
    - name: Stop the server tomcat from UI
      shell:
