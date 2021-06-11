@@ -1,5 +1,5 @@
 ---
-- name: Playbook to stop server
+- name: Playbook to check server version
   #hosts: localhost
   hosts: webserver
 
@@ -8,6 +8,7 @@
      shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/version.sh ; #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
+     
      register: toms_version
 
    - debug:
