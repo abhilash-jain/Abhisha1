@@ -11,8 +11,8 @@
      
      register: toms_version
 
-   - debug:
-       var: toms_version.stdout_lines
+ #  - debug:
+  #     var: toms_version.stdout_lines
      tags: check_version  #uncommenting it to check if tags work without error
     
    - name: Stop the server tomcat from UI
@@ -21,6 +21,6 @@
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
  
      register: toms_process
-   - debug:
-       var: toms_process.stdout_lines
+   #- debug:
+    #   var: toms_process.stdout_lines
      tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
