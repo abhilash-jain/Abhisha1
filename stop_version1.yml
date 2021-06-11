@@ -23,4 +23,4 @@
      register: toms_process
    - debug:
        var: toms_process.stdout_lines
-      tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
+     tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
