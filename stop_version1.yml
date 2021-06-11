@@ -11,8 +11,8 @@
      
      register: toms_version
 
- #  - debug:
-  #     var: toms_version.stdout_lines
+   - debug:
+       var: toms_version.output
      tags: check_version  #uncommenting it to check if tags work without error
     
    - name: Stop the server tomcat from UI
