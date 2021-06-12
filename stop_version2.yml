@@ -1,4 +1,3 @@
-
 # THis playbook we are trying to add version and stop steps in same file along with tags to call them
 ---
 - name: Playbook to check server version
@@ -9,26 +8,27 @@
    - name: Check the version of server tomcat
      shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/version.sh ; #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
-     
+
      register: toms_version
      tags: toms_version
 
    - debug:
        var: toms_version.stdout_lines
-      tags: check_version
-    
+     tags: check_version
+
    - name: Stop the server tomcat from UI
      shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh ;#>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
- 
+
      register: toms_stop
      tags: toms_stop
+
    - debug:
        var: toms_stop.stdout_lines
      tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
 
-  - name: Check if the process stopped successfully or not
-    shell:
+   - name: Check if the process stopped successfully or not
+     shell:
 
              pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
               ## >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
@@ -36,6 +36,6 @@
      register: check_process
      tags: check_process
 
-  - debug:
+   - debug:
       var: check_process.stdout_lines
      tags: check_process_debug
