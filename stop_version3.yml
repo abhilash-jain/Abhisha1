@@ -13,7 +13,7 @@
 
 #   - debug:
  #      var: toms_version.output
-     tags: check_version  #uncommenting it to check if tags work without error
+     tags: version  # This tag will be used to check the version.
     
    - name: Stop the server tomcat from UI
      shell:
@@ -23,4 +23,4 @@
      register: toms_process
    #- debug:
     #   var: toms_process.stdout_lines
-     tags: stop_server   #tags here are commented for now as scripts shows error "VARIABLE UNDEFINED"
+     tags: stop   #THis tag will be used to stop the servers
