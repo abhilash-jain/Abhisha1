@@ -1,25 +1,48 @@
-# THis playbook we are trying to add checks of files and directory if exists 
-- name: Playbook to check server version
-  #hosts: localhost
+---
+- name: Playbook name
   hosts: webserver
 
   tasks:
-   - name: Check the version of server tomcat
-     shell:
+  - name: Check the directory if exists or not
+    stat:
+      path: /home/ec2-user/
+    register: register_name
+  - name: Check the file if exists or not
+    stat:
+      path: /home/ec2-user/abhi
+    register: register_name1
+
+  - name: Show the message if directory exists
+    debug:
+      msg: "The directory exists"
+    when: register_name.stat.exists and register_name.stat.isdir
+
+  - name: Show the message if file exists
+    debug:
+      msg: "The file  exists"
+    when: register_name1.stat.exists
+
+  - name: Show the message if file doesnt exists
+    debug:
+      msg: "The file  doesnt exists"
+    when: not register_name1.stat.exists
+
+  - name: Check the version of server tomcat
+    shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/version.sh ; #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
-     
-     register: toms_version
+
+    register: toms_version
 
 #   - debug:
  #      var: toms_version.output
-     tags: version  # This tag will be used to check the version.
-    
-   - name: Stop the server tomcat from UI
-     shell:
+    tags: version  # This tag will be used to check the version.
+
+  - name: Stop the server tomcat from UI
+    shell:
              /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh ;#>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
- 
-     register: toms_process
+
+    register: toms_process
    #- debug:
     #   var: toms_process.stdout_lines
-     tags: stop   #THis tag will be used to stop the servers
+    tags: stop   #THis tag will be used to stop the servers
