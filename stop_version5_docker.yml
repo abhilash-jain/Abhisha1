@@ -1,6 +1,6 @@
 ---
 - name: Playbook name
-  hosts: webserver
+  #hosts: webserver
 
   tasks:
   - name: Check the directory if exists or not
