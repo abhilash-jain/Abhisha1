@@ -3,13 +3,13 @@
   hosts: webserver
 
   tasks:
-  - name: Check the directory if exists or not
+  - name: Check the tomcat directory if exists or not
     stat:
-      path: /home/ec2-user/
+      path: /home/tomcat/
     register: register_name
   - name: Check the file if exists or not
     stat:
-      path: /home/ec2-user/abhi
+      path: /home/tomcat/bin/startup.sh
     register: register_name1
 
   - name: Show the message if directory exists
@@ -29,7 +29,7 @@
 
   - name: Check the version of server tomcat
     shell:
-             /home/ec2-user/apache-tomcat-9.0.39/bin/version.sh ; #>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+             /home/tomcat/bin/version.sh ; #>> /home/tomcat/bin/somelog
 
     register: toms_version
 
@@ -39,7 +39,7 @@
 
   - name: Stop the server tomcat from UI
     shell:
-             /home/ec2-user/apache-tomcat-9.0.39/bin/shutdown.sh ;#>> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
+             /home/tomcat/bin/shutdown.sh ;#>> /home/tomcat/bin/somelog
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
 
     register: toms_process
