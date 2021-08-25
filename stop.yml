@@ -6,4 +6,4 @@
   tasks:
    - name: Stop the server tomcat from UI
      shell:
-             /home/tomcat/bin/shutdown.sh >> /home/tomcat/bin/somelog
+             /home/tomcat/bin/shutdown.sh >> /home/tomcat/somelog
