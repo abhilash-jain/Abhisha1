@@ -4,31 +4,34 @@
   hosts: webserver
 
   tasks:
-  - name: Check the tomcat directory if exists or not
+ - name: check all files dir exists or not block tasks
+    tag: check_all_File_dir
+  block:   
+   - name: Check the tomcat directory if exists or not
     stat:
       path: /home/tomcat/
     register: register_name
-  - name: Check the file if exists or not
+   - name: Check the file if exists or not
     stat:
       path: /home/tomcat/bin/startup.sh
     register: register_name1
 
-  - name: Show the message if directory exists
+   - name: Show the message if directory exists
     debug:
       msg: "The directory exists"
     when: register_name.stat.exists and register_name.stat.isdir
 
-  - name: Show the message if file exists
+   - name: Show the message if file exists
     debug:
       msg: "The file  exists"
     when: register_name1.stat.exists
 
-  - name: Show the message if file doesnt exists
+   - name: Show the message if file doesnt exists
     debug:
       msg: "The file  doesnt exists"
     when: not register_name1.stat.exists
 
-  - name: Check the version of server tomcat
+ - name: Check the version of server tomcat
     shell:
              /home/tomcat/bin/version.sh ; #>> /home/tomcat/bin/somelog
 
@@ -47,8 +50,3 @@
    #- debug:
     #   var: toms_process.stdout_lines
     tags: stop   #THis tag will be used to stop the servers
-
-
-
-
-
