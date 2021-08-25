@@ -1,0 +1,55 @@
+---
+- name: Playbook name
+  hosts: webserver
+
+  tasks:
+  - name: Check the tomcat directory if exists or not
+    stat:
+      path: /home/tomcat/
+    register: register_name
+  - name: Check the file if exists or not
+    stat:
+      path: /home/tomcat/bin/startup.sh
+    register: register_name1
+
+  - name: Show the message if directory exists
+    debug:
+      msg: "The directory exists"
+    when: register_name.stat.exists and register_name.stat.isdir
+
+  - name: Show the message if file exists
+    debug:
+      msg: "The file  exists"
+    when: register_name1.stat.exists
+
+  - name: Show the message if file doesnt exists
+    debug:
+      msg: "The file  doesnt exists"
+    when: not register_name1.stat.exists
+
+  - name: Check the version of server tomcat
+    shell:
+             /home/tomcat/bin/version.sh ; #>> /home/tomcat/bin/somelog
+
+    register: toms_version
+
+#   - debug:
+ #      var: toms_version.output
+    tags: version  # This tag will be used to check the version.
+
+  - name: Stop the server tomcat from UI
+    shell:
+             /home/tomcat/bin/shutdown.sh ;#>> /home/tomcat/bin/somelog
+              pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
+
+    register: toms_process
+   #- debug:
+    #   var: toms_process.stdout_lines
+    tags: stop   #THis tag will be used to stop the servers
+
+
+
+
+
+
+
