@@ -1,0 +1,16 @@
+---
+- name: Playbook to check server version
+  #hosts: localhost
+  hosts: webserver
+
+  tasks:
+   - name: Check the version of server tomcat
+     shell:
+             /home/tomcat/bin/version.sh ; #>> /home/tomcat/bin/somelog
+     
+     register: toms_version
+   - debug:
+       var: toms_version.stdout_lines
+     tags: check_version
+     
+ 
