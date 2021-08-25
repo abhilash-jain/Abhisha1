@@ -1,6 +1,18 @@
+[webserver:children]
+tomcat1
+tomcat2
+tomcat3
+tomcat4
 
-[webserver]
-#localhost ansible_user=ec2-user
- #13.233.183.64 ansible_user=ec2-user
- 65.0.91.15 ansible_user=ec2-user
+ [tomcat1]
+172.18.0.3 ansible_ssh_user=ansible ansible_ssh_pass=root
+#localhost ansible_ssh_user=ansible ansible_ssh_pass=root
 
+[tomcat2]
+172.18.0.4 ansible_ssh_user=ansible ansible_ssh_pass=root
+
+[tomcat3]
+172.18.0.5 ansible_ssh_user=ansible ansible_ssh_pass=root
+
+[tomcat4]
+172.18.0.6 ansible_ssh_user=ansible ansible_ssh_pass=root
