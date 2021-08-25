@@ -1,5 +1,5 @@
 ---
-- name: Playbook name
+- name: Playbook name   # This playbook was to test if multiple tasks can be run thru the block usage and multiple tags thru jenkins usage
   hosts: webserver
 
   tasks:
