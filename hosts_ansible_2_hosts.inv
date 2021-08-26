@@ -12,7 +12,7 @@ tomcat2
 172.18.0.4 ansible_ssh_user=ansible ansible_ssh_pass=root
 
 [tomcat3]
-172.18.0.5 ansible_ssh_user=ansible ansible_ssh_pass=root
+#172.18.0.5 ansible_ssh_user=ansible ansible_ssh_pass=root
 
 [tomcat4]
-172.18.0.6 ansible_ssh_user=ansible ansible_ssh_pass=root
+#172.18.0.6 ansible_ssh_user=ansible ansible_ssh_pass=root
