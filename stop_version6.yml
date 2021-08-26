@@ -1,6 +1,6 @@
 ---
 - name: Playbook name   # This playbook was to test if multiple tasks can be run thru the block usage and multiple tags thru jenkins usage
-  hosts: tomcat_group1
+  hosts: all
 
   tasks:
   - name: ntp tasks
