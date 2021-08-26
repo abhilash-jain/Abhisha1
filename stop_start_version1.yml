@@ -49,3 +49,13 @@
    #- debug:
     #   var: toms_process.stdout_lines
     tags: stop   #THis tag will be used to stop the servers
+    
+  - name: Start the server tomcat from UI
+    shell:
+             /home/tomcat/bin/startup.sh ;#>> /home/tomcat/bin/somelog
+              pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
+
+    register: toms_process
+   #- debug:
+    #   var: toms_process.stdout_lines
+    tags: start   #THis tag will be used to stop the servers
