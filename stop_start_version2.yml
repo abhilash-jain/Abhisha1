@@ -1,5 +1,5 @@
 ---
-- name: Playbook name   # This playbook will display process running or not output on the scree or console output.
+- name: Playbook name   # This playbook was to test if multiple tasks can be run thru the block usage and multiple tags thru jenkins usage
   hosts: all
 
   tasks:
@@ -48,6 +48,8 @@
     register: toms_process
    #- debug:
     #   var: toms_process.stdout_lines
+    tags: stop
+
   - name: Check Server Process is running or not
     shell:
               ## >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
@@ -59,7 +61,7 @@
 
   - debug:
       var: free_var.stdout_lines
-    tags: stop   #THis tag will be used to stop the servers
+    tags: process_status   #THis tag will be used to stop the servers
 
   - name: Start the server tomcat from UI
     shell:
@@ -67,6 +69,8 @@
              #pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
 
     register: toms_process
+    tags: start
+
   - name: Check Server Process is running or not
     shell:
               ## >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
@@ -80,4 +84,4 @@
       var: free_var.stdout_lines
    #- debug:
     #   var: toms_process.stdout_lines
-    tags: start   #THis tag will be used to stop the servers
+    tags: process_status   #THis tag will be used to stop the servers
