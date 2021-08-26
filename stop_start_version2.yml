@@ -77,9 +77,7 @@
               #pgrep -x java;
               #echo $?;
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
-
     register: free_var
-
   - debug:
       var: free_var.stdout_lines
    #- debug:
