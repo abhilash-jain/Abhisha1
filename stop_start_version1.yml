@@ -52,7 +52,7 @@
     
   - name: Start the server tomcat from UI
     shell:
-             /home/tomcat/bin/startup.sh ;#>> /home/tomcat/bin/somelog
+             nohup /home/tomcat/bin/startup.sh ;#>> /home/tomcat/bin/somelog
               pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
 
     register: toms_process
