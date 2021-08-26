@@ -1,8 +1,8 @@
 [webserver:children]
 tomcat1
 tomcat2
-tomcat3
-tomcat4
+#tomcat3
+#tomcat4
 
  [tomcat1]
 172.18.0.3 ansible_ssh_user=ansible ansible_ssh_pass=root
