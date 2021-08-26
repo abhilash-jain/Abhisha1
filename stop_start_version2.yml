@@ -50,18 +50,6 @@
     #   var: toms_process.stdout_lines
     tags: stop
 
-  - name: Check Server Process is running or not
-    shell:
-              ## >> /home/ec2-user/apache-tomcat-9.0.39/bin/somelog
-              #pgrep -x java;
-              #echo $?;
-              pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
-
-    register: free_var
-
-  - debug:
-      var: free_var.stdout_lines
-    tags: process_status   #THis tag will be used to stop the servers
 
   - name: Start the server tomcat from UI
     shell:
@@ -71,12 +59,3 @@
     register: toms_process
     tags: start
 
-  - name: Check Server Process is running or not
-    shell:
-          pgrep -x java >/dev/null && echo "Process found" || echo "Process not found";
-    register: free_var
-  - debug:
-     var: free_var.stdout_lines
-   #- debug:
-    #   var: toms_process.stdout_lines
-    tags: process_status   #THis tag will be used to stop the servers
